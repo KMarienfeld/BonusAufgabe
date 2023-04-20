@@ -30,5 +30,15 @@ class MainTest {
     }
 
     @Test
-    void
+    void prüfungQuadrat() {
+        //given
+        int zahl = 2;
+        int expect = 4;
+
+        //when
+        int actual = Main.quadratBerechnen(zahl);
+
+        //Then
+        assertEquals(expect, actual);
+    }
 }

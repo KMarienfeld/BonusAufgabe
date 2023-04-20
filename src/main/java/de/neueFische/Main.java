@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        /* Page 1
         System.out.println(name("Anna"));
         System.out.println(prüfungObGrößer0(20));
         System.out.println(quadratBerechnen(8));
@@ -12,10 +13,12 @@ public class Main {
         System.out.println("Schreibe hier deinen Namen rein:");
         String input = scanner.nextLine();
 
-        System.out.println("Hallo "+ input);
+        System.out.println("Hallo "+ input); */
+
+
     }
 
-    // Methoden
+    // Methoden für Aufg. page 1
     public static String name(String name1) {
         for( int i = 1; i < 5; ++i) {
             System.out.println(name1);
@@ -36,5 +39,7 @@ public class Main {
     public static int quadratBerechnen(int zahl2) {
             return (zahl2 * zahl2);
     }
+
+    // Methoden für Aufg. page 2
 
 }
