@@ -1,5 +1,6 @@
 package de.neueFische;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -16,6 +17,8 @@ public class Main {
         System.out.println("Hallo "+ input); */
 
 
+        System.out.println(ausgabeZahlenwort(5));
+        worterInArray();
     }
 
     // Methoden für Aufg. page 1
@@ -41,5 +44,44 @@ public class Main {
     }
 
     // Methoden für Aufg. page 2
+    public static String ausgabeZahlenwort(int zahl3) {
+        String[] zahlenworter = new String[10];
+        zahlenworter[0] = "Eins";
+        zahlenworter[1] = "Zwei";
+        zahlenworter[2] = "Drei";
+        zahlenworter[3] = "Vier";
+        zahlenworter[4] = "Fünf";
+        zahlenworter[5] = "Sechs";
+        zahlenworter[6] = "Sieben";
+        zahlenworter[7] = "Acht";
+        zahlenworter[8] = "Neun";
+        zahlenworter[9] = "Zehn";
+        if (zahl3 < 10) {
+            return zahlenworter[zahl3 -1];
+        } else {
+            return "Zahl ist mind. zweistellig";
+        }
+    }
+
+
+    public static String zahlenTeilbar(int zahl) {
+        if (zahl % 3 == 0) {
+            return "#" + zahl;
+        } else if (zahl % 5 == 0) {
+            return "$" + zahl;
+        }
+        return String.valueOf(zahl);
+    }
+
+    public static void worterInArray() {
+        for ( int i = 1; i< 100; ++i) {
+            String[] arrayMitWort = new String[i];
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Schreibe hier ein Wort rein:");
+            String input = scanner.next();
+            arrayMitWort[i-1] = input;
+            System.out.println(Arrays.toString(arrayMitWort));
+        }
+    }
 
 }

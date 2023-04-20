@@ -41,4 +41,57 @@ class MainTest {
         //Then
         assertEquals(expect, actual);
     }
+
+    @Test
+    void ausgabeZahlenwortEinstellig() {
+        //given
+        int zahl = 2;
+        String expect = "zwei";
+
+        //when
+        String actual = Main.ausgabeZahlenwort(zahl);
+
+        //Then
+        assertEquals(expect, actual);
+    }
+
+    @Test
+    void teilbarDurch3() {
+        //given
+        int zahl = 9;
+        String expect = "#9";
+
+        //when
+        String actual = Main.zahlenTeilbar(zahl);
+
+        //Then
+        assertEquals(expect, actual);
+    }
+
+    @Test
+    void teilbarDurch5() {
+        //given
+        int zahl = 10;
+        String expect = "$10";
+
+        //when
+        String actual = Main.zahlenTeilbar(zahl);
+
+        //Then
+        assertEquals(expect, actual);
+    }
+
+    @Test
+    void nichtTeilbarDurch() {
+        //given
+        int zahl = 7;
+        String expect = "7";
+
+        //when
+        String actual = Main.zahlenTeilbar(zahl);
+
+        //Then
+        assertEquals(expect, actual);
+    }
 }
+
