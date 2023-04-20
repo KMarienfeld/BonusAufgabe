@@ -17,13 +17,14 @@ public class Main {
         System.out.println("Hallo "+ input); */
 
 
-        System.out.println(ausgabeZahlenwort(5));
-        worterInArray();
+        //System.out.println(ausgabeZahlenwort(5));
+        //worterInArray();
+        printStringFromScanner();
     }
 
     // Methoden für Aufg. page 1
     public static String name(String name1) {
-        for( int i = 1; i < 5; ++i) {
+        for (int i = 1; i < 5; ++i) {
             System.out.println(name1);
         }
         return name1;
@@ -31,7 +32,7 @@ public class Main {
 
     public static boolean prüfungObGrößer0(int zahl) {
         boolean ergebnis;
-        if(zahl>0) {
+        if (zahl > 0) {
             ergebnis = true;
         } else {
             ergebnis = false;
@@ -40,7 +41,7 @@ public class Main {
     }
 
     public static int quadratBerechnen(int zahl2) {
-            return (zahl2 * zahl2);
+        return (zahl2 * zahl2);
     }
 
     // Methoden für Aufg. page 2
@@ -57,7 +58,7 @@ public class Main {
         zahlenworter[8] = "Neun";
         zahlenworter[9] = "Zehn";
         if (zahl3 < 10) {
-            return zahlenworter[zahl3 -1];
+            return zahlenworter[zahl3 - 1];
         } else {
             return "Zahl ist mind. zweistellig";
         }
@@ -74,14 +75,31 @@ public class Main {
     }
 
     public static void worterInArray() {
-        for ( int i = 1; i< 100; ++i) {
+        for (int i = 1; i < 100; ++i) {
             String[] arrayMitWort = new String[i];
             Scanner scanner = new Scanner(System.in);
             System.out.println("Schreibe hier ein Wort rein:");
             String input = scanner.next();
-            arrayMitWort[i-1] = input;
+            arrayMitWort[i - 1] = input;
             System.out.println(Arrays.toString(arrayMitWort));
         }
     }
 
+    public static void printStringFromScanner() {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a string or type exit to exit");
+        String[] inputArray = new String[0];
+
+        while (true) {
+            System.out.println(Arrays.toString(inputArray));
+            String input = scanner.nextLine();
+            if (input.equals("exit")) {
+                break;
+            }
+            String[] copyArray = Arrays.copyOf(inputArray, inputArray.length + 1);
+            copyArray[copyArray.length - 1] = input;
+            inputArray = copyArray;
+        }
+    }
 }
