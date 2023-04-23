@@ -19,7 +19,11 @@ public class Main {
 
         //System.out.println(ausgabeZahlenwort(5));
         //worterInArray();
-        printStringFromScanner();
+        //printStringFromScanner();
+        //printStringArrayReverse();
+        //intArraySorted();
+        //separateStringByComma();
+        //System.out.println(calculateChecksum(45));
     }
 
     // Methoden für Aufg. page 1
@@ -101,5 +105,36 @@ public class Main {
             copyArray[copyArray.length - 1] = input;
             inputArray = copyArray;
         }
+    }
+
+    // Methoden für Page 3:
+    public static void printStringArrayReverse () {
+        String[] stringArray = {"a", "b", "c", "d", "e"};
+        for (int i = stringArray.length -1; i >= 0; i--) {
+            System.out.println(stringArray[i]);
+        }
+    }
+
+    public static void intArraySorted () {
+        int[] sortArray = {6, 2, 8, 3, 9, 6};
+        Arrays.sort(sortArray);
+        System.out.println(Arrays.toString(sortArray));
+    }
+
+    public static void separateStringByComma() {
+        String sentence = "This,is,a,string,seperated,by,commas";
+        String[] sentenceArray = sentence.split(",");
+
+        for (int i = 0; i <= sentenceArray.length -1; i++ ) {
+            System.out.println(sentenceArray[i]);
+        }
+    }
+    public static int calculateChecksum( int number) {
+        int sum = 0;
+        while (number > 0) {
+            sum += number % 10;
+            number /= 10;
+        }
+        return sum;
     }
 }
